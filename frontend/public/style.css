@@ -1,0 +1,267 @@
+/* UTILITIES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+}
+
+.line {
+  width: 100%;
+  height: 3px;
+  background-color: #676666;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  background-color: rgb(255, 255, 255);
+
+}
+
+/* LOGO */
+.logo {
+  font-size: 50px;
+  color: red;
+  font-weight: 900;
+  margin-left: 15px;
+  text-shadow: 3px 3px 5px #8f8a8a;
+}
+
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 20px;
+  font-weight: 600;
+  text-shadow: 3px 3px 5px #8f8a8a;
+}
+
+.menu li:hover {
+  background-color: #e2e1e1;
+
+  transition: 0.3s ease;
+}
+
+.menu li {
+  padding: 5px 20px;
+
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type=checkbox] {
+  display: none;
+}
+
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+  }
+
+  .menu li:hover {
+    display: inline-block;
+    background-color: #e2e1e1;
+    transition: 0.3s ease;
+  }
+
+  .menu li+li {
+    margin-top: 12px;
+  }
+
+  input[type=checkbox]:checked~.menu {
+    display: block;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .dropdown {
+    left: 50%;
+    top: 30px;
+    transform: translateX(35%);
+  }
+
+  .dropdown li:hover {
+    background-color: #e2e1e1;
+  }
+}
+
+
+
+
+
+.container {
+  padding: 30px;
+  background-color: black;
+}
+
+
+.image {
+  position: relative;
+  left: 6vw;
+  height: 28vw;
+  width: 18vw;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 5px 3px 5px 5px rgb(83, 83, 83);
+
+}
+
+.content {
+  position: relative;
+  margin: 15px;
+  width: 60%;
+  left: 14vw;
+  display: inline-block;
+  color: white;
+
+}
+
+.content-head {
+  margin: 15px 0px;
+  font-size: 35px;
+  text-shadow: 3px 3px 5px #8f8a8a;
+  letter-spacing: 2px;
+}
+
+.content-subhead {
+  font-size: 17px;
+  letter-spacing: 2px;
+  margin: 18px 0px;
+  text-shadow: 3px 3px 5px #8f8a8a;
+}
+
+.content-endhead {
+  font-size: 25px;
+  letter-spacing: 2px;
+  margin: 6px 0px;
+  text-shadow: 3px 3px 5px #8f8a8a;
+}
+
+.content-text {
+  font-size: 15px;
+  letter-spacing: 1px;
+}
+
+
+
+
+.button-82-pushable {
+  position: relative;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  outline-offset: 4px;
+  transition: filter 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-82-shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: hsl(0deg 0% 0% / 0.25);
+  will-change: transform;
+  transform: translateY(2px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+.button-82-edge {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  background: linear-gradient(to left,
+      hsl(340deg 100% 16%) 0%,
+      hsl(340deg 100% 32%) 8%,
+      hsl(340deg 100% 32%) 92%,
+      hsl(340deg 100% 16%) 100%);
+}
+
+.button-82-front {
+  display: block;
+  position: relative;
+  padding: 12px 27px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  color: white;
+  background: hsl(345deg 100% 47%);
+  will-change: transform;
+  transform: translateY(-4px);
+  transition:
+    transform 600ms cubic-bezier(.3, .7, .4, 1);
+}
+
+@media (min-width: 768px) {
+  .button-82-front {
+    font-size: 1.25rem;
+    padding: 12px 42px;
+  }
+}
+
+.button-82-pushable:hover {
+  filter: brightness(110%);
+  -webkit-filter: brightness(110%);
+}
+
+.button-82-pushable:hover .button-82-front {
+  transform: translateY(-6px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-front {
+  transform: translateY(-2px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:hover .button-82-shadow {
+  transform: translateY(4px);
+  transition:
+    transform 250ms cubic-bezier(.3, .7, .4, 1.5);
+}
+
+.button-82-pushable:active .button-82-shadow {
+  transform: translateY(1px);
+  transition: transform 34ms;
+}
+
+.button-82-pushable:focus:not(:focus-visible) {
+  outline: none;
+}
